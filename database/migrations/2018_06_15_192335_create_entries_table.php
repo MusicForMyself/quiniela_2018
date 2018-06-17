@@ -15,6 +15,9 @@ class CreateEntriesTable extends Migration
     {
         Schema::create('entries', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('selection');
+            $table->integer('user_id')->foreign('user_id')->references('id')->on('users');
+            $table->integer('score');
             $table->timestamps();
         });
     }
