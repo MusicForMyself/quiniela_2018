@@ -12,3 +12,30 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+.content{
+  background-color: #F5CF00;
+}
+
+.sprited{
+  background: url("images/sprite.svg") no-repeat 0px 0px;
+  background-size: 320px;
+}
+
+.ornato-header{
+
+}
+
+.ornato-footer{
+
+}
+
+.busca-gloria{
+
+}
+
+.footer{
+  .brands{
+    @extend .sprited;
+  }
+}
