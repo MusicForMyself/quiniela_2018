@@ -38,6 +38,8 @@
 
                         </form>
 
+                        <div class="bumper"></div>
+
                     </div>
 
                 </div>

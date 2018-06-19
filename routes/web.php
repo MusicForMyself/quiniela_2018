@@ -18,6 +18,10 @@ use App\Http\Controllers\entryController;
             return view('welcome')->with(compact('agency'));
         });
 
+        Route::get('/rules', function ($agency) {
+            return view('rules')->with(compact('agency'));
+        });
+        
         Route::get('/thanks', function ($agency) {
             return view('thanks')->with(compact('agency'));
         });

@@ -18,6 +18,18 @@
 
                 <figure class="busca-gloria"></figure>
 
+                <h1>Reglas</h1>
+                <h2>Quiniela</h2>
+                <h3>Los jugadores sumarán puntos de acuerdo al siguiente criterio:</h3>
+
+                <ul class="rules">
+                    <li>Atinar al resultado <strong>1 punto</strong></li>
+                    <li>Atinar al marcador <strong>3 puntos</strong></li>
+                    <li>Atinar al primer anotador de México <strong>5 punto</strong></li>
+                    <li>Atinar al número de goles en el 1er tiempo <strong>3 punto</strong></li>
+                    <li>Atinar al número de goles en el 2do tiempo <strong>3 punto</strong></li>
+                </ul>
+
                 <div class="title m-b-md">
                     <div class="col-sm-12">
                         @isset($agency)
@@ -25,8 +37,6 @@
                         @endisset
                     </div>
                 </div>
-
-                <div class="bumper"></div>
 
                 @isset($agency)
                     <div class="ornato-footer logo-{{ $agency }}"></div>
