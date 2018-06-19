@@ -2,40 +2,171 @@
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
+/** Proxima Nova **/
+@font-face {
+  font-family: 'proxima_nova_altblack';
+  src: url('/fonts/Proxima Nova Alt Black.eot');
+  src: url('/fonts/Proxima Nova Alt Black.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/Proxima Nova Alt Black.woff2') format('woff2'),
+  url('/fonts/Proxima Nova Alt Black.woff') format('woff'),
+  url('/fonts/Proxima Nova Alt Black.ttf') format('truetype'),
+  url('/fonts/Proxima Nova Alt Black.svg#proxima_nova_altblack') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'Proxima Nova Bold';
+  src: url('/fonts/Proxima Nova Alt Bold.eot');
+  src: url('/fonts/Proxima Nova Alt Bold.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/Proxima Nova Alt Bold.woff2') format('woff2'),
+  url('/fonts/Proxima Nova Alt Bold.woff') format('woff'),
+  url('/fonts/Proxima Nova Alt Bold.ttf') format('truetype'),
+  url('/fonts/Proxima Nova Alt Bold.svg#proxima_nova_altbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('/fonts/Proxima Nova Alt Regular.eot');
+  src: url('/fonts/Proxima Nova Alt Regular.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/Proxima Nova Alt Regular.woff2') format('woff2'),
+  url('/fonts/Proxima Nova Alt Regular.woff') format('woff'),
+  url('/fonts/Proxima Nova Alt Regular.ttf') format('truetype'),
+  url('/fonts/Proxima Nova Alt Regular.svg#proxima_nova_altregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'proxima_nova_scosfthin';
+  src: url('/fonts/Proxima Nova ScOsf Thin.eot');
+  src: url('/fonts/Proxima Nova ScOsf Thin.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/Proxima Nova ScOsf Thin.woff2') format('woff2'),
+  url('/fonts/Proxima Nova ScOsf Thin.woff') format('woff'),
+  url('/fonts/Proxima Nova ScOsf Thin.ttf') format('truetype'),
+  url('/fonts/Proxima Nova ScOsf Thin.svg#proxima_nova_scosfthin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'proxima_nova_ltsemibold';
+  src: url('/fonts/Proxima Nova Semibold.eot');
+  src: url('/fonts/Proxima Nova Semibold.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/Proxima Nova Semibold.woff2') format('woff2'),
+  url('/fonts/Proxima Nova Semibold.woff') format('woff'),
+  url('/fonts/Proxima Nova Semibold.ttf') format('truetype'),
+  url('/fonts/Proxima Nova Semibold.svg#proxima_nova_ltsemibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+@font-face {
+  font-family: 'proxima_nova_ltthin';
+  src: url('/fonts/Proxima Nova Thin.eot');
+  src: url('/fonts/Proxima Nova Thin.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/Proxima Nova Thin.woff2') format('woff2'),
+  url('/fonts/Proxima Nova Thin.woff') format('woff'),
+  url('/fonts/Proxima Nova Thin.ttf') format('truetype'),
+  url('/fonts/Proxima Nova Thin.svg#proxima_nova_ltthin') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 // Variables
 @import "variables";
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
+
+// Global styles
+html { font-size: 62.5%; }
+body { font-size: 14px; font-size: 1.4rem; }
+h1   { font-size: 24px; font-size: 2.4rem; }
 
 .content{
-  background-color: #F5CF00;
-}
 
-.sprited{
-  background: url("images/sprite.svg") no-repeat 0px 0px;
-  background-size: 320px;
-}
+  background-color: $body-bg;
+  font-family: 'Proxima Nova', Arial, Helvetica, sans-serif;
 
-.ornato-header{
-
-}
-
-.ornato-footer{
-
-}
-
-.busca-gloria{
-
-}
-
-.footer{
-  .brands{
-    @extend .sprited;
+  .register-button{
+    display: block;
+    background-color: $button-bg;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3.5px;
+    margin: 1rem auto;
+    padding: 0.75rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
   }
+
+  .sprited{
+    background: url("/images/busca-la-gloria-sprite.svg") no-repeat 0px 0px;
+    background-size: 320px;
+  }
+
+  .ornato-header{
+    @extend .sprited;
+    background-position: 0 0;
+    background-size: 200px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .ornato-footer{
+    @extend .sprited;
+    background-position: 0 0;
+    background-size: 200px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .busca-gloria{
+    @extend .sprited;
+    background-position: 0 0;
+    background-size: 420px;
+    width: 156px;
+    height: 184px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .formComponent{
+
+    input{
+      display: block;
+      width: 100%;
+      margin: 0 0 0.5rem 0;
+      padding: 0.25rem 1rem;
+      font-size: 1.2rem;
+      border: 0;
+      border-radius: 76px;
+    }
+    label{
+      font-family: 'Proxima Nova Bold', Arial, Helvetica, sans-serif;
+      margin: 0.5rem 0 0.25rem 0;
+      font-size:  1.2rem;
+      line-height: 2rem;
+      color: $button-bg;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+  }
+
+  .footer{
+    .brands{
+      @extend .sprited;
+      background-position: 0 0;
+      background-size: 420px;
+      width: 50px;
+      height: 50px;
+    }
+  }
+
 }
