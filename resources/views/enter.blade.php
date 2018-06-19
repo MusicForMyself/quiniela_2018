@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Participa en la Quiniela MercadoLibre | Rusia 2018</title>
 
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="container flex-center position-ref full-height">
 
             <div class="content">
 
@@ -24,15 +24,17 @@
                         <form id="enterForm" class="formComponent" action="{{ url("{$agency}/enter") }}" method="POST">
 
                             <label for="first_name">Nombre:</label>
-                            <input type="first_name" name="first_name" id="first_name">
+                            <input type="text" name="first_name" id="first_name">
 
                             <label for="last_name">Apellido:</label>
-                            <input type="last_name" name="last_name" id="last_name">
+                            <input type="text" name="last_name" id="last_name">
 
                             <label for="email">Email:</label>
                             <input type="email" name="email" id="email">
 
-                            <a type="submit" href="{{ url("{$agency}/fill-picks") }}" class="btn btn-default register-button">Continuar</a>
+                            @csrf
+
+                            <input type="submit" value="Continuar" class="btn btn-default register-button">
 
                         </form>
 

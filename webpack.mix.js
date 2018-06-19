@@ -17,5 +17,5 @@ mix.js('resources/assets/js/app.js', 'public/js')
     .minify('public/css/app.css');
 
 if (!mix.inProduction()) {
-    mix.browserSync({open: 'external', host: 'quiniela.local', proxy: 'quiniela.local', port: '8081', browser: 'firefox'});
+    mix.browserSync({open: 'external', host: 'quiniela.local', proxy: 'quiniela.local', port: '8082', browser: 'firefox'});
 }

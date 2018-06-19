@@ -10480,13 +10480,37 @@ h1 {
   font-family: 'Proxima Nova', Arial, Helvetica, sans-serif;
 }
 
+.content h1 {
+  font-size: 1.6rem;
+  font-family: 'Proxima Nova Bold', Arial, Helvetica, sans-serif;
+  color: #002C73;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.content h2 {
+  font-family: 'Proxima Nova Bold', Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1.5px;
+}
+
+.content h3 {
+  text-align: center;
+  line-height: 2rem;
+}
+
 .content .register-button {
   display: block;
   background-color: #002C73;
   color: white;
   text-decoration: none;
   letter-spacing: 3.5px;
-  margin: 1rem auto;
+  width: 100%;
+  margin: 2rem auto 1rem auto;
   padding: 0.75rem;
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -10502,17 +10526,21 @@ h1 {
 }
 
 .content .ornato-header {
-  background-position: 0 0;
-  background-size: 200px;
-  width: 50px;
-  height: 50px;
+  background-position: 100% 0;
+  background-size: 160%;
+  width: 100%;
+  height: 100px;
 }
 
 .content .ornato-footer {
-  background-position: 0 0;
-  background-size: 200px;
-  width: 50px;
-  height: 50px;
+  display: block;
+  background-position: 100% 0;
+  background-size: 160%;
+  width: 100%;
+  height: 100px;
+  margin: 0;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .content .busca-gloria {
@@ -10521,10 +10549,11 @@ h1 {
   width: 156px;
   height: 184px;
   display: block;
-  margin: 0 auto;
+  margin: -30px auto 0 auto;
 }
 
-.content .formComponent input {
+.content .formComponent input[type=text],
+.content .formComponent input[type=email] {
   display: block;
   width: 100%;
   margin: 0 0 0.5rem 0;

@@ -19,8 +19,8 @@
 
                 <div class="title m-b-md">
                     <div class="col-sm-12">
-                        <h1>Gracias por participar</h1>
-
+                        <h1>¡Gracias por participar {{ $user['first_name'] . " " . $user['last_name'] }}!</h1>
+                        <h3>Te informaremos por correo si resultas ganador de la quiniela.</h3>
                     </div>
                 </div>
 

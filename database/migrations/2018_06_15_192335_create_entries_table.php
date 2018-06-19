@@ -17,7 +17,7 @@ class CreateEntriesTable extends Migration
             $table->increments('id');
             $table->string('selection');
             $table->integer('user_id')->foreign('user_id')->references('id')->on('users');
-            $table->integer('score');
+            $table->integer('score')->default(0)->nullable();
             $table->timestamps();
         });
     }

@@ -14,28 +14,32 @@ class entryController extends Controller
     
     public static function postProfile( $agency = NULL ){
         $params = request()->all(['first_name', 'last_name', 'email']);
+        $_params = (object) $params;
         $user = \App\User::updateOrCreate([
-                            "email" => $params->email
-                        ],
-                        [
-                            "first_name" => $params->first_name,
-                            "last_name" => $params->last_name
-                        ]);
+                                    "email"         => $_params->email
+                                ],
+                                [
+                                    "first_name"    => $_params->first_name,
+                                    "last_name"     => $_params->last_name
+                                ]);
         if($user){
-            return view('fill-picks', with($params));
+            return view('fill-picks' )->with(compact( ['params', 'agency'] ));
         }
     }
     
     public static function postEntry( $agency = NULL ){
-        $params = request()->all(['result_1', 'result_2', 'prop_1', 'prop_2']);
+        
+        $params = request()->all(['result_1', 'result_2', 'prop_1_1', 'prop_1_2', 'prop_2_1', 'prop_2_2', 'user']);
+        $user  = \App\User::where("email", $params['user'])->first();
         $picks_encoded = json_encode($params);
-        $user = \App\Entry::updateOrCreate([],
+        $entry = \App\Entry::updateOrCreate([
+                                                "user_id" => $user->id
+                                            ],
                                             [
-                                                "first_name" => $params->first_name,
-                                                "last_name" => $params->last_name
+                                                "selection" => $picks_encoded
                                             ]);
-        if($user){
-            return view('thanks', with($params));
+        if($entry){
+            return view('thanks')->with(compact(['params','user']));
         }
     }
     
