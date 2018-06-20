@@ -93,6 +93,11 @@ h1   { font-size: 24px; font-size: 2.4rem; }
   background-color: $body-bg;
   font-family: 'Proxima Nova', Arial, Helvetica, sans-serif;
 
+  .nopadding{
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
   h1{
     font-size: 2.4rem;
     font-family: 'Proxima Nova Bold', Arial, Helvetica, sans-serif;

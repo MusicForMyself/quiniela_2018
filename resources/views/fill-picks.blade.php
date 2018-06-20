@@ -49,14 +49,14 @@
                                     <label for=""><i class="flag mexico"></i>México</label>
                                 </div>
                             </div>
-                            <div class="col-xs-2">
+                            <div class="col-xs-2 nopadding">
                                 <div class="form-group">
-                                    <input class="form-control" type="radio" name="result_1" value="mex">
+                                    <input type="number" class="form-control" name="result_1_a" id="result_1_a">
                                 </div>
                             </div>
-                            <div class="col-xs-2">
+                            <div class="col-xs-2 nopadding">
                                 <div class="form-group">
-                                    <input class="form-control" type="radio" name="result_1" value="cor">
+                                    <input type="number" class="form-control" name="result_1_b" id="result_1_b">
                                 </div>
                             </div>
                             <div class="col-xs-3">
@@ -162,14 +162,14 @@
                                     <label for=""><i class="flag mexico"></i>México</label>
                                 </div>
                             </div>
-                            <div class="col-xs-2">
+                            <div class="col-xs-2 nopadding">
                                 <div class="form-group">
-                                    <input class="form-control" type="radio" name="result_2" value="mex">
+                                    <input type="number" class="form-control" name="result_2_a" id="result_2_a">
                                 </div>
                             </div>
-                            <div class="col-xs-2">
+                            <div class="col-xs-2 nopadding">
                                 <div class="form-group">
-                                    <input class="form-control" type="radio" name="result_2" value="sue">
+                                    <input type="number" class="form-control" name="result_2_b" id="result_2_b">
                                 </div>
                             </div>
                             <div class="col-xs-3">
