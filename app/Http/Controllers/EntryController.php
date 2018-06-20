@@ -29,7 +29,7 @@ class entryController extends Controller
     
     public static function postEntry( $agency = NULL ){
         
-        $params = request()->all(['result_1', 'result_2', 'prop_1_1', 'prop_1_2', 'prop_2_1', 'prop_2_2', 'user']);
+        $params = request()->all(['result_1', 'result_2', 'prop_1_1', 'prop_1_2', 'prop_1_3', 'prop_2_1', 'prop_2_2', 'prop_2_3', 'user', 'agency']);
         $user  = \App\User::where("email", $params['user'])->first();
         $picks_encoded = json_encode($params);
         $entry = \App\Entry::updateOrCreate([

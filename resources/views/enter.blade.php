@@ -6,18 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Participa en la Quiniela MercadoLibre | Rusia 2018</title>
-
+        <link rel="stylesheet" href="{{ mix("/css/app.min.css") }}">
     </head>
     <body>
-        <div class="container flex-center position-ref full-height">
+        <div class="content">
 
-            <div class="content">
+            <div class="container">
 
                 <div class="ornato-header"></div>
 
-                <figure class="busca-gloria"></figure>
+                <div class="row">
+                    <figure class="busca-gloria"></figure>
+                </div>
 
-                <div class="title m-b-md">
+                <div class="row">
 
                     <div class="col-sm-12">
 
@@ -44,12 +46,56 @@
 
                 </div>
 
+                <figure class="logo-ml"></figure>
+
                 @isset($agency)
-                    <div class="ornato-footer logo-{{ $agency }}"></div>
+                    <div class="_footer logo-{{ $agency }}"></div>
                 @endisset
+                <div class="ornato-footer"></div>
             </div>
         </div>
     </body>
-    <link rel="stylesheet" href="{{ mix("/css/app.min.css") }}">
-    <script type="application/javascript" src="{{ mix("/js/app.min.js") }}"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script type="application/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+    <script type="application/javascript" >
+
+        jQuery(document).ready(function($) {
+
+            if($('#enterForm').length)
+                $("#enterForm").validate({
+                    ignore: ':hidden:not([class~=selectized]),:hidden > .selectized, .selectize-control .selectize-input input',
+                    rules: {
+                        email: {
+                            required: true,
+                            email: true
+                        },
+                        first_name: {
+                            required: true
+                        },
+                        last_name: {
+                            required: true
+                        }
+                    },
+                    messages: {
+                        email: {
+                            required: "Por favor introduce tu correo electrónico.",
+                            email: "Introduce un email válido"
+                        },
+                        first_name: {
+                            required: "Por favor introduce tu nombre"
+                        },
+                        last_name: {
+                            required: "Por favor introduce tu apellido"
+                        }
+                    },
+                    submitHandler: function ( form, event ) {
+
+                        form.submit();
+                    }
+                });
+        });
+    </script>
 </html>

@@ -10,27 +10,30 @@
     </head>
     <body>
 
-        <div class="flex-center position-ref full-height">
+        <div class="content">
 
-            <div class="content">
+            <div class="container">
 
                 <div class="ornato-header"></div>
 
-                <figure class="busca-gloria"></figure>
+                <div class="row">
+                    <figure class="busca-gloria"></figure>
+                </div>
 
                 <h1>Reglas</h1>
                 <h2>Quiniela</h2>
                 <h3>Los jugadores sumarán puntos de acuerdo al siguiente criterio:</h3>
+                <div class="row">
+                    <ul class="rules">
+                        <li>Atinar al resultado <strong>1 punto</strong></li>
+                        <li>Atinar al marcador <strong>3 puntos</strong></li>
+                        <li>Atinar al primer anotador de México <strong>5 punto</strong></li>
+                        <li>Atinar al número de goles en el 1er tiempo <strong>3 punto</strong></li>
+                        <li>Atinar al número de goles en el 2do tiempo <strong>3 punto</strong></li>
+                    </ul>
+                </div>
 
-                <ul class="rules">
-                    <li>Atinar al resultado <strong>1 punto</strong></li>
-                    <li>Atinar al marcador <strong>3 puntos</strong></li>
-                    <li>Atinar al primer anotador de México <strong>5 punto</strong></li>
-                    <li>Atinar al número de goles en el 1er tiempo <strong>3 punto</strong></li>
-                    <li>Atinar al número de goles en el 2do tiempo <strong>3 punto</strong></li>
-                </ul>
-
-                <div class="title m-b-md">
+                <div class="row">
                     <div class="col-sm-12">
                         @isset($agency)
                             <a href="{{ url("{$agency}/enter") }}" class="btn btn-default register-button">Regístrate</a>
