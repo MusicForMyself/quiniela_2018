@@ -13,14 +13,16 @@ class entryController extends Controller
     }
     
     public static function postProfile( $agency = NULL ){
-        $params = request()->all(['first_name', 'last_name', 'email']);
+        $params = request()->all(['first_name', 'last_name', 'email', 'account', 'position']);
         $_params = (object) $params;
         $user = \App\User::updateOrCreate([
                                     "email"         => $_params->email
                                 ],
                                 [
                                     "first_name"    => $_params->first_name,
-                                    "last_name"     => $_params->last_name
+                                    "last_name"     => $_params->last_name,
+                                    "account"       => $_params->account,
+                                    "position"      => $_params->position
                                 ]);
         if($user){
             return view('fill-picks' )->with(compact( ['params', 'agency'] ));

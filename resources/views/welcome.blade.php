@@ -29,8 +29,6 @@
                     <div class="col-sm-2"></div>
                 </div>
 
-                <div class="bumper"></div>
-
                 <figure class="logo-ml"></figure>
 
                 @isset($agency)
