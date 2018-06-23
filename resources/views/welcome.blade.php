@@ -19,12 +19,11 @@
 
                 <figure class="busca-gloria"></figure>
 
-                <div class="row">
+                <div class="title m-b-md">
                     <div class="col-sm-2"></div>
                     <div class="col-sm-8">
-                        @isset($agency)
-                            <a href="{{ url("{$agency}/enter") }}" class="btn btn-default register-button">Regístrate</a>
-                        @endisset
+                        <h1 class="ornatorrinco">Gracias <br><span class="_white">por participar</span></h1>
+                        <h3>Los resultados se publicarán al terminar el partido contra Suecia.</h3>
                     </div>
                     <div class="col-sm-2"></div>
                 </div>
