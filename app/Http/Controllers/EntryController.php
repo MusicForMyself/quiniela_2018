@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class entryController extends Controller
@@ -47,7 +48,15 @@ class entryController extends Controller
     
     }
     
-    public function fetchResults(){
-    
+    public static function fetchResults( $agency = NULL ){
+        
+        $users = User::leftJoin("entries", "users.id", "=", "entries.user_id")
+                        ->where("entries.selection", "LIKE", "%{$agency}%")
+                        ->get();
+        foreach ( $users as $eachUser ){
+            $score = 0;
+            $picks = json_decode($eachUser->selection);
+        }
+        return $users;
     }
 }

@@ -42,8 +42,10 @@ use App\Http\Controllers\entryController;
             return EntryController::postEntry($agency);
         });
 
-        Route::get('/results', function ($agency) {
-            return view('results');
+        Route::get('/results', function ( $agency ) {
+            $results = EntryController::fetchResults( $agency );
+            return view('results')
+                    ->with( compact(['results', 'agency']) );
         });
         
     });
