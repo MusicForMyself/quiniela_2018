@@ -43,9 +43,7 @@ use App\Http\Controllers\entryController;
         });
 
         Route::get('/results', function ( $agency ) {
-            $results = EntryController::fetchResults( $agency );
-            return view('results')
-                    ->with( compact(['results', 'agency']) );
+            return EntryController::fetchResults( $agency );
         });
         
     });

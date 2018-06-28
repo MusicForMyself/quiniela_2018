@@ -6777,8 +6777,13 @@ h1 {
 }
 
 .content {
+  min-height: 100vh;
   background-color: #F5CF00;
   font-family: 'Proxima Nova', Arial, Helvetica, sans-serif;
+}
+
+.content .container {
+  min-height: 140vh;
 }
 
 .content .nopadding {
@@ -6823,6 +6828,10 @@ h1 {
   letter-spacing: 5px;
 }
 
+.content .full-width {
+  width: 100%;
+}
+
 .content .ornatorrinco::before {
   content: "";
   position: absolute;
@@ -6834,6 +6843,15 @@ h1 {
   background-size: 480px !important;
   background-position: -344px -206px !important;
   z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .content .ornatorrinco::before {
+    width: 88px;
+    height: 110px;
+    background-size: 580px !important;
+    background-position: -394px -236px !important;
+  }
 }
 
 .content .ornatorrinco::after {
@@ -6854,6 +6872,15 @@ h1 {
   -ms-filter: "FlipH";
 }
 
+@media (min-width: 768px) {
+  .content .ornatorrinco::after {
+    width: 88px;
+    height: 110px;
+    background-size: 580px !important;
+    background-position: -394px -236px !important;
+  }
+}
+
 .content .register-button {
   display: block;
   background-color: #002C73;
@@ -6865,6 +6892,12 @@ h1 {
   padding: 0.75rem;
   font-size: 1.2rem;
   text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .content .register-button {
+    max-width: 220px;
+  }
 }
 
 .content .sprited,
@@ -6882,10 +6915,16 @@ h1 {
 }
 
 .content .ornato-header {
-  background-position: 81% 0;
+  background-position: 83% 0;
   background-size: 190%;
   width: 100%;
   height: 100px;
+}
+
+@media (min-width: 768px) {
+  .content .ornato-header {
+    height: 200px;
+  }
 }
 
 .content .ornato-footer {
@@ -6899,6 +6938,12 @@ h1 {
           transform: rotate(180deg);
 }
 
+@media (min-width: 768px) {
+  .content .ornato-footer {
+    display: none;
+  }
+}
+
 .content .busca-gloria {
   background-position: -30px 0;
   background-size: 470px;
@@ -6908,9 +6953,14 @@ h1 {
   margin: -30px auto 0 auto;
 }
 
-.content .bumper {
-  display: block;
-  height: 8vh;
+@media (min-width: 768px) {
+  .content .busca-gloria {
+    width: 280px;
+    height: 320px;
+    margin-bottom: 4rem;
+    background-position: -50px 0;
+    background-size: 820px;
+  }
 }
 
 .content .rules {
@@ -6981,6 +7031,14 @@ h1 {
   background-size: 460px;
 }
 
+@media (min-width: 768px) {
+  .content .logo-ml {
+    position: fixed;
+    bottom: 3.5rem;
+    left: 4rem;
+  }
+}
+
 .content ._footer {
   display: block;
   width: 20px;
@@ -6988,8 +7046,15 @@ h1 {
   margin: auto;
 }
 
+@media (min-width: 768px) {
+  .content ._footer {
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+  }
+}
+
 .content ._footer.logo-havas {
-  display: block;
   width: 82px;
   height: 28px;
   margin: auto;
@@ -6998,7 +7063,6 @@ h1 {
 }
 
 .content ._footer.logo-starcom {
-  display: block;
   width: 90px;
   height: 32px;
   margin: auto;
@@ -7007,7 +7071,6 @@ h1 {
 }
 
 .content ._footer.logo-omnicom {
-  display: block;
   width: 122px;
   height: 32px;
   margin: auto;
@@ -7016,7 +7079,6 @@ h1 {
 }
 
 .content ._footer.logo-ipg {
-  display: block;
   width: 64px;
   height: 32px;
   margin: auto;
@@ -7025,7 +7087,6 @@ h1 {
 }
 
 .content ._footer.logo-groupm {
-  display: block;
   width: 80px;
   height: 28px;
   margin: auto;
@@ -7034,7 +7095,6 @@ h1 {
 }
 
 .content ._footer.logo-carat {
-  display: block;
   width: 110px;
   height: 32px;
   margin: auto;

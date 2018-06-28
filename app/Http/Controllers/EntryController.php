@@ -14,14 +14,16 @@ class entryController extends Controller
     }
     
     public static function postProfile( $agency = NULL ){
-        $params = request()->all(['first_name', 'last_name', 'email']);
+        $params = request()->all(['first_name', 'last_name', 'email', 'account', 'position']);
         $_params = (object) $params;
         $user = \App\User::updateOrCreate([
                                     "email"         => $_params->email
                                 ],
                                 [
                                     "first_name"    => $_params->first_name,
-                                    "last_name"     => $_params->last_name
+                                    "last_name"     => $_params->last_name,
+                                    "account"       => $_params->account,
+                                    "position"      => $_params->position
                                 ]);
         if($user){
             return view('fill-picks' )->with(compact( ['params', 'agency'] ));
@@ -50,13 +52,39 @@ class entryController extends Controller
     
     public static function fetchResults( $agency = NULL ){
         
+        $csvExporter = new \Laracsv\Export();
         $users = User::leftJoin("entries", "users.id", "=", "entries.user_id")
                         ->where("entries.selection", "LIKE", "%{$agency}%")
                         ->get();
         foreach ( $users as $eachUser ){
             $score = 0;
             $picks = json_decode($eachUser->selection);
+            // Primer partido
+            if( intval($picks->result_1_a)  > intval($picks->result_1_b) )
+                $score ++;
+            if( intval($picks->result_1_a) === 2  && intval($picks->result_1_b) === 1 )
+                $score = $score + 3;
+            if( intval($picks->prop_1_1) === 19 )
+                $score = $score + 5;
+            if( intval($picks->prop_1_2) === 1 )
+                $score = $score + 3;
+            if( intval($picks->prop_1_3) === 2 )
+                $score = $score + 3;
+            // Segundo partido
+            if( intval($picks->result_2_a) < intval($picks->result_2_b) )
+                $score ++;
+            if( intval($picks->result_2_a) === 0  && intval($picks->result_2_b) === 3 )
+                $score = $score + 3;
+            if( intval($picks->prop_2_1) === 21 )
+                $score = $score + 5;
+            if( intval($picks->prop_2_2) === 0 )
+                $score = $score + 3;
+            if( intval($picks->prop_2_3) === 3 )
+                $score = $score + 3;
+    
+            $eachUser->score = $score;
         }
-        return $users;
+        return $csvExporter->build($users, ['email', 'first_name', 'last_name', 'score', 'created_at'])
+                    ->download($agency . '-results.csv');;
     }
 }

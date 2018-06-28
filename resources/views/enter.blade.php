@@ -21,18 +21,25 @@
 
                 <div class="row">
 
-                    <div class="col-sm-12">
+                    <div class="hidden-xs col-sm-3"></div>
+                    <div class="col-xs-12 col-sm-6">
 
                         <form id="enterForm" class="formComponent" action="{{ url("{$agency}/enter") }}" method="POST">
 
-                            <label for="first_name">Nombre:</label>
+                            <label for="first_name">Nombre *:</label>
                             <input type="text" name="first_name" id="first_name">
 
-                            <label for="last_name">Apellido:</label>
+                            <label for="last_name">Apellido *:</label>
                             <input type="text" name="last_name" id="last_name">
 
-                            <label for="email">Email:</label>
+                            <label for="email">Email *:</label>
                             <input type="email" name="email" id="email">
+
+                            <label for="last_name">Cuenta:</label>
+                            <input type="text" name="account" id="account">
+
+                            <label for="last_name">Puesto:</label>
+                            <input type="text" name="position" id="position">
 
                             @csrf
 
@@ -43,16 +50,18 @@
                         <div class="bumper"></div>
 
                     </div>
+                    <div class="hidden-xs col-sm-3"></div>
 
                 </div>
 
-                <figure class="logo-ml"></figure>
-
-                @isset($agency)
-                    <div class="_footer logo-{{ $agency }}"></div>
-                @endisset
-                <div class="ornato-footer"></div>
             </div>
+
+            <figure class="logo-ml"></figure>
+
+            @isset($agency)
+                <div class="_footer logo-{{ $agency }}"></div>
+            @endisset
+            <div class="ornato-footer"></div>
         </div>
     </body>
     <script
