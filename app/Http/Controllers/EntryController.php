@@ -56,7 +56,7 @@ class entryController extends Controller
         $users = User::leftJoin("entries", "users.id", "=", "entries.user_id")
                         ->where("entries.selection", "LIKE", "%{$agency}%")
                         ->get();
-        foreach ( $users as $eachUser ){
+      foreach ( $users as $eachUser ){
             $score = 0;
             $picks = json_decode($eachUser->selection);
             // Primer partido
@@ -84,7 +84,7 @@ class entryController extends Controller
     
             $eachUser->score = $score;
         }
-        return $csvExporter->build($users, ['email', 'first_name', 'last_name', 'score', 'created_at'])
-                    ->download($agency . '-results.csv');;
+        return $csvExporter->build($users, ['email', 'first_name', 'last_name', 'score', 'account', 'position', 'created_at'])
+                            ->download($agency . '-results.csv');
     }
 }
